@@ -1,10 +1,13 @@
 
 /*
- * Read e' una classe di utilita' che semplifica la lettura di valori da linea di comando.
+ * Leggi e' una classe di utilita' che semplifica la lettura di valori da linea di comando.
  * La sua filosofia e' quella di continuare a chiedere input all'utente fino a quando
  * l'input non e' correttamente formattato (ad esempio, se mi aspetto un numero e
  * l'utente inserisce lettere, continuero' a chiedere nuovi input fino a quando viene inserito un numero)
  */
+
+import java.util.ArrayList;
+
 public class Leggi {
 
     /*
@@ -71,5 +74,15 @@ public class Leggi {
      */
     public static boolean siNo(String messaggio, String si, String no) {
         return false;
+    }
+
+    /*
+     * 0) stampa in output il messaggio
+     * 1) stampa in output le opzioni (numerate)
+     * 2) chiedi all'utente di scegliere un'opzione, inserendo un numero
+     * 3) restituisci l'opzione scelta
+     */
+    public static String scelta(String messaggio, ArrayList<String> opzioni) {
+        return null;
     }
 }
