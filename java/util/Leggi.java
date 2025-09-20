@@ -1,14 +1,21 @@
 
 /*
- * Leggi e' una classe di utilita' che semplifica la lettura di valori da linea di comando.
+ * Leggi e' una classe di utilita' che semplifica la lettura di input da linea di comando.
  * La sua filosofia e' quella di continuare a chiedere input all'utente fino a quando
  * l'input non e' correttamente formattato (ad esempio, se mi aspetto un numero e
  * l'utente inserisce lettere, continuero' a chiedere nuovi input fino a quando viene inserito un numero)
+ * 
+ * La classe Leggi non e' pensata per essere istanziata, contiene solo
+ * metodi ed attributi di tipo static.
  */
 
 import java.util.ArrayList;
 
 public class Leggi {
+    /*
+     * qui sotto definisci un attributo static di tipo BufferedReader che legge
+     * dallo standard input tramite un InputStreamReader ed inizializzarlo
+     */
 
     /*
      * 0) stampa in output il messaggio
@@ -68,7 +75,7 @@ public class Leggi {
     /*
      * 0) stampa in output il messaggio
      * 1) leggi una stringa dall'input
-     * 2) se la stringa letta e' uguale al contenuto della variabile yes, restituisci true
+     * 2) se la stringa letta e' uguale al contenuto della variabile si, restituisci true
      * 3) se la stringa letta e' uguale al contenuto della variabile no, restituisci false
      * 4) in caso contrario, stampa un messaggio di errore e torna al punto 0
      */
