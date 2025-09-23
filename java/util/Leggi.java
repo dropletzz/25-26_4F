@@ -9,6 +9,7 @@
  * metodi ed attributi di tipo static.
  */
 
+import java.io.*;
 import java.util.ArrayList;
 
 public class Leggi {
@@ -16,6 +17,9 @@ public class Leggi {
      * qui sotto definisci un attributo static di tipo BufferedReader che legge
      * dallo standard input tramite un InputStreamReader ed inizializzarlo
      */
+    private static final BufferedReader in = new BufferedReader(
+        new InputStreamReader(System.in)
+    );
 
     /*
      * 0) stampa in output il messaggio
@@ -23,7 +27,20 @@ public class Leggi {
      * 2) restituisci la stringa appena letta
      */
     public static String stringa(String messaggio) {
-        return "";
+        System.out.print(messaggio);
+        String risultato = "";
+
+        try {
+            risultato = in.readLine();
+        }
+        catch (IOException e) {
+            System.out.println("! impossibile leggere dallo standard input");
+            // se non posso leggere lo standart input c'e' qualche grosso problema nel computer
+            // quindi termino il programma restituendo un codice di errore
+            System.exit(1);
+        }
+
+        return risultato;
     }
 
     /*
@@ -34,12 +51,44 @@ public class Leggi {
      * 4) in caso contrario, stampa un messaggio di errore e ritorna al punto 0
      */
     public static int intero(String messaggio) {
-        return 0;
+        int risultato = 0;
+        boolean errore = false;
+        do { 
+            try {
+                String input = Leggi.stringa(messaggio);
+                risultato = Integer.parseInt(input);
+                errore = false;
+            } catch (NumberFormatException e) {
+                System.out.println("! Non hai inserito un intero, riprova");
+                errore = true;
+            }
+        } while (errore);
+
+        return risultato;
     }
 
     /* Leggi in input un numero intero che deve essere >= min */
     public static int interoMin(String messaggio, int min) {
-        return 0;
+        int risultato = 0;
+        boolean errore = false;
+        do { 
+            try {
+                String input = Leggi.stringa(messaggio);
+                risultato = Integer.parseInt(input);
+                if (risultato >= min) {
+                    errore = false;
+                }
+                else {
+                    errore = true;
+                    System.out.println("! Il numero deve essere >= " + min);
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("! Non hai inserito un intero, riprova");
+                errore = true;
+            }
+        } while (errore);
+
+        return risultato;
     }
 
     /* Leggi in input un numero intero che deve essere <= max */
@@ -80,7 +129,23 @@ public class Leggi {
      * 4) in caso contrario, stampa un messaggio di errore e torna al punto 0
      */
     public static boolean siNo(String messaggio, String si, String no) {
-        return false;
+        boolean errore = false;
+        boolean risultato = false;
+
+        do {
+            String input = Leggi.stringa(messaggio);
+            if (input.equals(si) || input.equals(no)) {
+                risultato = input.equals(si);
+                errore = false;
+            }
+            else {
+                errore = true;
+                System.out.println("! Inserisci " + si + " oppure " + no);
+            }
+
+        } while (errore);
+
+        return risultato;
     }
 
     /*
