@@ -1,5 +1,12 @@
 import java.util.ArrayList;
 
+/*
+ * Gli array dinamici (o liste) in Java non hanno un limite
+ * al numero di elementi che possono contenere.
+ * Come per gli array statici, ogni elemento e' accessibile
+ * tramite un indice numerico che parte da 0.
+ */
+
 public class ArrayDinamici {
     public static void main(String[] args) {
         // inizializzo un array dinamico (lista)
@@ -10,6 +17,8 @@ public class ArrayDinamici {
 
         // riempio l'array con la tabellina del 7
         for (int i = 1; i <= 10; i++) {
+            // il metodo add della classe ArrayList aggiunge un elemento
+            // in coda all'array
             lista.add(i * 7);
         }
 
