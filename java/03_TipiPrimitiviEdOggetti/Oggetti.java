@@ -32,7 +32,13 @@ public class Oggetti {
 
         // dato che b e' null non posso accedere ai suoi attributi o metodi
         // risultato: NullPointerException
-        System.out.print("b = (" + b.x + ", " + b.y + ")");
+        try {
+            System.out.println("b = (" + b.x + ", " + b.y + ")");
+        }
+        catch (NullPointerException e) {
+            System.out.println("Hai tentato di usare un attributo di una variabile null");
+            System.out.println("Errore originale: " + e.getMessage());
+        }
     }
     
     
