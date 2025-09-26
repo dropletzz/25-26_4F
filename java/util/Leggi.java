@@ -72,19 +72,14 @@ public class Leggi {
         int risultato = 0;
         boolean errore = false;
         do { 
-            try {
-                String input = Leggi.stringa(messaggio);
-                risultato = Integer.parseInt(input);
-                if (risultato >= min) {
-                    errore = false;
-                }
-                else {
-                    errore = true;
-                    System.out.println("! Il numero deve essere >= " + min);
-                }
-            } catch (NumberFormatException e) {
-                System.out.println("! Non hai inserito un intero, riprova");
+            risultato = Leggi.intero(messaggio);
+
+            if (risultato >= min) {
+                errore = false;
+            }
+            else {
                 errore = true;
+                System.out.println("! Il numero deve essere >= " + min);
             }
         } while (errore);
 
@@ -93,32 +88,110 @@ public class Leggi {
 
     /* Leggi in input un numero intero che deve essere <= max */
     public static int interoMax(String messaggio, int max) {
-        return 0;
+        int risultato = 0;
+        boolean errore = false;
+        do { 
+            risultato = Leggi.intero(messaggio);
+            if (risultato <= max) {
+                errore = false;
+            }
+            else {
+                errore = true;
+                System.out.println("! Il numero deve essere <= " + max);
+            }
+        } while (errore);
+
+        return risultato;
     }
 
     /* Leggi in input un numero intero che deve essere compreso tra max e min (estremi inclusi) */
     public static int interoTra(String messaggio, int min, int max) {
-        return 0;
+        int risultato = 0;
+        boolean errore = false;
+        do { 
+            risultato = Leggi.intero(messaggio);
+            if (risultato >= min && risultato <= max) {
+                errore = false;
+            }
+            else {
+                errore = true;
+                System.out.println("! Il numero deve essere compreso tra " + min + " e " + max);
+            }
+        } while (errore);
+
+        return risultato;
     }
 
     /* Leggi in input un numero con la virgola */
     public static double numero(String messaggio) {
-        return 0.0;
+        double risultato = 0;
+        boolean errore = false;
+        do { 
+            try {
+                String input = Leggi.stringa(messaggio);
+                risultato = Double.parseDouble(input);
+                errore = false;
+            } catch (NumberFormatException e) {
+                System.out.println("! Non hai inserito un numero, riprova");
+                errore = true;
+            }
+        } while (errore);
+
+        return risultato;
     }
 
     /* Leggi in input un numero con la virgola che deve essere >= min */
     public static double numeroMin(String messaggio, double min) {
-        return 0.0;
+        double risultato = 0;
+        boolean errore = false;
+        do { 
+            risultato = Leggi.numero(messaggio);
+            if (risultato >= min) {
+                errore = false;
+            }
+            else {
+                errore = true;
+                System.out.println("! Il numero deve essere >= " + min);
+            }
+        } while (errore);
+
+        return risultato;
     }
 
     /* Leggi in input un numero con la virgola che deve essere <= max */
     public static double numeroMax(String messaggio, double max) {
-        return 0.0;
+        double risultato = 0;
+        boolean errore = false;
+        do { 
+            risultato = Leggi.numero(messaggio);
+            if (risultato <= max) {
+                errore = false;
+            }
+            else {
+                errore = true;
+                System.out.println("! Il numero deve essere <= " + max);
+            }
+        } while (errore);
+
+        return risultato;
     }
 
     /* Leggi in input un numero con la virgola che deve essere compreso tra max e min (estremi inclusi) */
     public static double numeroTra(String messaggio, double min, double max) {
-        return 0.0;
+        double risultato = 0;
+        boolean errore = false;
+        do { 
+            risultato = Leggi.numero(messaggio);
+            if (risultato >= min && risultato <= max) {
+                errore = false;
+            }
+            else {
+                errore = true;
+                System.out.println("! Il numero deve essere compreso tra " + min + " e " + max);
+            }
+        } while (errore);
+
+        return risultato;
     }
 
     /*
@@ -131,6 +204,7 @@ public class Leggi {
     public static boolean siNo(String messaggio, String si, String no) {
         boolean errore = false;
         boolean risultato = false;
+        String messaggioErrore = "! Valori accettati: '" + si + "' oppure '" + no + "'";
 
         do {
             String input = Leggi.stringa(messaggio);
@@ -140,7 +214,7 @@ public class Leggi {
             }
             else {
                 errore = true;
-                System.out.println("! Inserisci " + si + " oppure " + no);
+                System.out.println(messaggioErrore);
             }
 
         } while (errore);
