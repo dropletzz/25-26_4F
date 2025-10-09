@@ -164,3 +164,29 @@ String nonVuota = "Testo";
 System.out.println(vuota.isEmpty()); // Stampa: true
 System.out.println(nonVuota.isEmpty()); // Stampa: false
 ```
+
+## Altri metodi utili che non sono della classe String
+
+### **`Character.isAlphabetic(char c)`**
+
+Restituisce `true` se il carattere è alfabetico, altrimenti `false`.
+
+```java
+char alfabetico = 'V';
+String nonAlfabetico = '?';
+System.out.println(Character.isAlphabetic(alfabetico)); // Stampa: true
+System.out.println(Character.isAlphabetic(nonAlfabetico)); // Stampa: false
+```
+
+---
+
+### **`Character.isDigit(char c)`**
+
+Restituisce `true` se il carattere è numerico, altrimenti `false`.
+
+```java
+char numerico = '7';
+String nonNumerico = 'X';
+System.out.println(Character.isDigit(numerico)); // Stampa: true
+System.out.println(Character.isDigit(nonNumerico)); // Stampa: false
+```
