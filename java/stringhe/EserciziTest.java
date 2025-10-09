@@ -66,13 +66,17 @@ public class EserciziTest {
         terminaGruppoTest();
      
         System.out.println("RIEPILOGO FINALE");
-        System.out.println("Sono passati %d test su %d".formatted(numTestPassati, numTest));
+        if (numTest == numTestPassati)
+            System.out.println("Tutti i test sono passati!");
+        else
+            System.out.println("Passati %d test su %d".formatted(numTestPassati, numTest));
+        System.out.println();
     }
     
     private static void iniziaGruppoTest(String nomeGruppo) {
         numTestGruppo = 0;
         numTestGruppoPassati = 0;
-        System.out.println(nomeGruppo);
+        System.out.println("TEST " + nomeGruppo);
     }
 
     private static void test(String risultato, String risultatoAtteso) {
