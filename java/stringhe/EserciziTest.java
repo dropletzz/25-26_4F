@@ -87,7 +87,7 @@ public class EserciziTest {
             numTestGruppoPassati += 1;
         }
         else {
-            System.out.println("    ERRORE risulta '%s' ma mi aspettavo '%s'".formatted(risultato, risultatoAtteso));
+            System.out.println("    ERRORE risulta '"+risultato+"' ma mi aspettavo '"+risultatoAtteso+"'");
         }
     }
 
@@ -99,7 +99,7 @@ public class EserciziTest {
             numTestGruppoPassati += 1;
         }
         else {
-            System.out.println("    ERRORE risulta '%s' ma mi aspettavo '%s'".formatted(risultato, risultatoAtteso));
+            System.out.println("    ERRORE risulta '"+risultato+"' ma mi aspettavo '"+risultatoAtteso+"'");
         }
     }
 
@@ -111,7 +111,7 @@ public class EserciziTest {
             numTestGruppoPassati += 1;
         }
         else {
-            System.out.println("    ERRORE risulta %d ma mi aspettavo %d".formatted(risultato, risultatoAtteso));
+            System.out.println("    ERRORE risulta "+risultato+" ma mi aspettavo "+risultatoAtteso);
         }
     }
 
@@ -123,7 +123,7 @@ public class EserciziTest {
             numTestGruppoPassati += 1;
         }
         else {
-            System.out.println("    ERRORE risulta %s ma mi aspettavo %s".formatted(listaToStringa(risultato), listaToStringa(risultatoAtteso)));
+            System.out.println("    ERRORE risulta "+listaToStringa(risultato)+" ma mi aspettavo "+listaToStringa(risultatoAtteso));
         }
     }
 
