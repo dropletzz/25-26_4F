@@ -69,7 +69,7 @@ public class EserciziTest {
         if (numTest == numTestPassati)
             System.out.println("Tutti i test sono passati!");
         else
-            System.out.println("Passati %d test su %d".formatted(numTestPassati, numTest));
+            System.out.println("Passati "+numTestPassati+" test su "+numTest);
         System.out.println();
     }
     
@@ -144,7 +144,7 @@ public class EserciziTest {
         if (numTestGruppo == numTestGruppoPassati)
             System.out.println("Tutti i test sono passati!");
         else
-            System.out.println("Passati %d test su %d".formatted(numTestGruppoPassati, numTestGruppo));
+            System.out.println("Passati "+numTestGruppoPassati+" test su "+ numTestGruppo);
         System.out.println();
     }
 }
