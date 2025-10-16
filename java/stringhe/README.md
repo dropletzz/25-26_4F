@@ -136,7 +136,7 @@ Verificano se la stringa inizia o termina con una sequenza di caratteri specific
 
 ```java
 String file = "immagine.jpg";
-System.out.println("Il file inizia con 'img': " + file.startsWith("img")); // Stampa: true
+System.out.println("Il file inizia con 'img': " + file.startsWith("img")); // Stampa: false
 System.out.println("È un file JPG? " + file.endsWith(".jpg"));             // Stampa: true
 ```
 
