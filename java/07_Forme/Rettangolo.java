@@ -4,7 +4,7 @@ public class Rettangolo extends FormaGeometrica {
     private float altezza;
     
     public Rettangolo(float base, float altezza) {
-        super(); // richiama il costruttore della superclasse (FormaGeometrica)
+        super("rettangolo"); // richiama il costruttore della superclasse (FormaGeometrica)
         this.base = base;
         this.altezza = altezza;
     }

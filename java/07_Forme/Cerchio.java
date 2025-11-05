@@ -4,7 +4,7 @@ public class Cerchio extends FormaGeometrica {
     private float raggio;
     
     public Cerchio(float raggio) {
-        super(); // richiama il costruttore della superclasse (FormaGeometrica)
+        super("cerchio"); // richiama il costruttore della superclasse (FormaGeometrica)
         this.raggio = raggio;
     }
 

@@ -14,10 +14,14 @@ public class Main {
         lista.add(new Quadrato(5));
 
         float areaTotale = 0;
+        float perimetroTotale = 0;
         for (FormaGeometrica f : lista) {
-            areaTotale = f.area();
+            System.out.println(f);
+            areaTotale += f.area();
+            perimetroTotale += f.perimetro();
         }
         System.out.println("Area totale: " + areaTotale);
+        System.out.println("Perimetro totale: " + perimetroTotale);
     }
     
 }
