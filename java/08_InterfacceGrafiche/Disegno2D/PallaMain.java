@@ -7,10 +7,10 @@ public class PallaMain extends JFrame {
     public static int ALTEZZA = 640;
 
     public PallaMain() {
-        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
-        this.setPreferredSize(new Dimension(LARGHEZZA, ALTEZZA));
-        this.add(new PallaComponent());
-        this.pack();
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setPreferredSize(new Dimension(LARGHEZZA, ALTEZZA));
+        add(new PallaComponent());
+        pack();
     }
 
     public static void main(String[] args) {
