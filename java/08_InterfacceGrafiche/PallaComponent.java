@@ -6,6 +6,7 @@ class PallaComponent extends JComponent {
     private static final int FPS = 60; // frames per second
     private final Timer timer;
     private int cx, cy, vx, vy, raggio;
+    private Color colore = new Color(0, 255, 0);
 
     public PallaComponent() {
         raggio = 100;
@@ -23,12 +24,26 @@ class PallaComponent extends JComponent {
             cx = cx + vx;
             cy = cy + vy;
 
-            // rimbalzo sul bordo sinistro/destro
-            if (cx - raggio < 0 || cx + raggio > getWidth()) vx = -vx;
-            // rimbalzo sul bordo alto/destro
-            if (cy - raggio < 0 || cy + raggio > getHeight()) vy = -vy;
-            // NOTA: il rimbalzo non e' gestito perfettamente
-            // (prova a rimpicciolire la finestra quando la palla e' vicino al bordo)
+            // rimbalzo sul bordo sinistro
+            if (cx - raggio < 0) {
+                vx = -vx;
+                cx = raggio;
+            }
+            // rimbalzo sul bordo destro
+            if (cx + raggio > getWidth()) {
+                vx = -vx;
+                cx = getWidth() - raggio;
+            }
+            // rimbalzo sul bordo alto
+            if (cy - raggio < 0) {
+                vy = -vy;
+                cy = raggio;
+            }
+            // rimbalzo sul bordo destro
+            if (cy + raggio > getHeight()) {
+                vy = -vy;
+                cy = getHeight() - raggio;
+            }
 
             repaint();
         });
@@ -39,7 +54,7 @@ class PallaComponent extends JComponent {
     protected void paintComponent(Graphics g) {
         Graphics2D g2 = (Graphics2D) g;
 
-        g2.setColor(Color.BLUE);
+        g2.setColor(colore);
         g2.fillOval(cx - raggio, cy - raggio, raggio * 2, raggio * 2);
 
         // fix per avere una grafica fluida anche su Linux
