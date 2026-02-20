@@ -1,6 +1,6 @@
-import java.util.ArrayList;
+import java.util.*;
 
-public class Esercizi {
+public class EsStringhe {
 
     /*
      * Aggiungi un punto esclamativo in fondo ad s e rendila maiuscola
@@ -135,13 +135,13 @@ public class Esercizi {
      * contaParole("ciao, mi chiamo ciao e sono un saluto, ciaoooo", "ia");
      * ritorna: 0
      */
-    public static int contaParole(String s, String daCercare) {
+    public static int contaParola(String s, String daCercare) {
         return -1;
     }
 
     /*
      * Trova nella stringa s la prima parte della stringa
-     * contenuta tra parentesi tonde e restituiscila.
+     * contenuta tra parentesi quadre e restituiscila.
      * Se non ci sono parentesi quadre restituisci la stringa vuota.
      * 
      * Ad esempio:
@@ -163,7 +163,7 @@ public class Esercizi {
      * trovaTutteTraQuadre("questa quella [e anche l'altra] ecc [ecc] ecc");
      * ritorna: ["e anche l'altra", "ecc"]
      */
-    public static ArrayList<String> trovaTutteTraQuadre(String s) {
+    public static List<String> trovaTutteTraQuadre(String s) {
         ArrayList<String> risultato = new ArrayList<>();
 
         return risultato;
