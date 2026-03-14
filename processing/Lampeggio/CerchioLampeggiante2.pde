@@ -1,6 +1,7 @@
 
 class CerchioLampeggiante2 {
   float x, y, raggio;
+  float ogniQuantoLampeggia = 2;
   
   public CerchioLampeggiante2(float px, float py, float r) {
     x = px;
@@ -9,7 +10,7 @@ class CerchioLampeggiante2 {
   }
   
   public void disegna() {
-      int tempoAttuale = millis();
-      if (sin(tempoAttuale) > 0) circle(x, y, 60);
+      float tempoAttuale = millis() / 1000;
+      if (sin(PI*tempoAttuale/ogniQuantoLampeggia) > 0) circle(x, y, 60);
   }
 }

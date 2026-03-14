@@ -8,7 +8,6 @@ void setup() {
 }
 
 void draw() {
-  
       background(#000000);
       c1.disegna();
       c2.disegna();
