@@ -44,10 +44,10 @@ public class Test {
         }
     }
 
-    protected static void test(int risultato, int risultatoAtteso) {
+    protected static void test(Integer risultato, Integer risultatoAtteso) {
         numTest += 1;
         numTestGruppo += 1;
-        if (risultato == risultatoAtteso) {
+        if (risultato.equals(risultatoAtteso)) {
             numTestPassati += 1;
             numTestGruppoPassati += 1;
         }
