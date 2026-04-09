@@ -47,12 +47,22 @@ public class Test {
     protected static void test(Integer risultato, Integer risultatoAtteso) {
         numTest += 1;
         numTestGruppo += 1;
-        if (risultato.equals(risultatoAtteso)) {
-            numTestPassati += 1;
-            numTestGruppoPassati += 1;
+        if (risultato == null || risultatoAtteso == null) {
+            if (risultato == risultatoAtteso) {
+                numTestPassati += 1;
+                numTestGruppoPassati += 1;
+            } else {
+                System.out.println("    ERRORE risulta "+risultato+" ma mi aspettavo "+risultatoAtteso);
+            }
         }
         else {
-            System.out.println("    ERRORE risulta "+risultato+" ma mi aspettavo "+risultatoAtteso);
+            if (risultato.equals(risultatoAtteso)) {
+                numTestPassati += 1;
+                numTestGruppoPassati += 1;
+            }
+            else {
+                System.out.println("    ERRORE risulta "+risultato+" ma mi aspettavo "+risultatoAtteso);
+            }
         }
     }
 

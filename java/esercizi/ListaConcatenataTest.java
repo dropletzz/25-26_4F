@@ -52,10 +52,10 @@ public class ListaConcatenataTest extends Test {
         test(lista4.get(2), 300);
         
         // Indici non validi 
-        test(lista4.get(-1) == null, true);
-        test(lista4.get(-50) == null, true);
-        test(lista4.get(3) == null, true);
-        test(lista4.get(10) == null, true);
+        test(lista4.get(-1), null);
+        test(lista4.get(-50), null);
+        test(lista4.get(3), null);
+        test(lista4.get(10), null);
         
         terminaGruppo();
 
