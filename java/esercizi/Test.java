@@ -108,7 +108,8 @@ public class Test {
 
         s.append("{");
         for (Map.Entry<K,V> e : mappa.entrySet()) {
-            s.append(" " + e.getKey() + ": " + e.getValue());
+            s.append(" "); s.append(e.getKey());
+            s.append(": "); s.append(e.getValue());
         }
         s.append(" }");
 
